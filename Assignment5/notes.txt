@@ -1,0 +1,4 @@
+// Adding an author field to all entities under books
+curl -X PUT https://api.usergrid.com/hanialghamdi/sandbox/books/?ql= -d '{ "author" : "John Steinbeck" }'
+
+
