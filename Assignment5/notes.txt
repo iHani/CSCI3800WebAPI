@@ -2,3 +2,26 @@
 curl -X PUT https://api.usergrid.com/hanialghamdi/sandbox/books/?ql= -d '{ "author" : "John Steinbeck" }'
 
 
+****************
+
+Querying sub-properties
+
+You can also query the value of sub-properties by using dot-notation in your query.
+
+For example, given this entity property:
+
+{
+	"item": {
+		"quantity": 2,
+		"name": "potato chips"
+	}
+}
+
+You could query for the name like this:
+
+/users?ql=item.name = 'potato chips'
+
+
+*********************************
+
+curl -X POST https://api.usergrid.com/hanialghamdi/sandbox/reviews/username/review/movies
