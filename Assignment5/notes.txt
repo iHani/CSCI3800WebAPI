@@ -24,4 +24,9 @@ You could query for the name like this:
 
 *********************************
 
-curl -X POST https://api.usergrid.com/hanialghamdi/sandbox/reviews/username/review/movies
+curl -X GET https://api.usergrid.com/hanialghamdi/sandbox/movies/drive/reviews
+
+
+
+
+
