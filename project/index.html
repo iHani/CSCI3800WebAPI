@@ -448,10 +448,23 @@
             $scope.cart.splice(x, 1);
         };
         $scope.agree = false;
-        $scope.generate = function () {
-            var order = $scope.fields;
+
+
+        $scope.generate=function(){
+            var order=$scope.fields;
             console.log(order);
-            $http.post("http://www.example.com ", order);
+            $http({
+                method:"POST",
+                url:"/payment/sp2/credit/v1/authorization",
+                data:order,
+                headers:{
+                    "Content-Type":"application/json;",
+                    "Authorization":"CPT license='05175a6e48184701b51e8fdc6b085ff4$$#$$srESu0UDFlTODjCjLD5Mg918U6SbWXNt$$#$$2017-03-08$$#$$cert_key$$#$$SHA512withRSA$$#$$RSA$$#$$1$$#$$8FA52E8A5BA768320C02FEF4265A67C590881A8508840C00BE129A36A5A9CC8FEB69331FD940F8C3AEE527FA966C844F8573CA11325C294ECC3BEAAD3FB3390E49953A29478F31619E92CC63F64E42852802C504B06F482806FC3D2497447B90E435F21B96C4BBA90948D521BC2B058E0EF14258AD2EB3FA5F7192C57AE56611CBB1C621E28062DADCC2D1EBD76C633D04EF6B866DF0B8AD411ED2DB1599529CD333AFB3EF24011773E891BA399319C95FE02ED235367F4178422D60E49BADCBF5DEB4D67BB0E1189C044F18A7E4E2783698E434E1AFB264686AC350338B4CC6E9C8521B314F2A8E863C6AAD5FAE4954808D3B5783A0A26295D23B3BECA3C13E'",
+                    "host": "apis.cert.vantiv.com",
+                    "Content-Length":750
+                },
+                withCredentials:true
+            });
         };
 
     });
